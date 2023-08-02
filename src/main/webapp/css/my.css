@@ -1,0 +1,18 @@
+h1, h2, #count1, #table1, #buttonPages {
+    color: darkblue;
+
+}
+
+th {
+    border: 2px solid black;
+    padding: 4px;
+    font-family: sans-serif;
+
+}
+
+td {
+    border: 1px solid black;
+    padding: 3px;
+    font-family: sans-serif;
+}
+
