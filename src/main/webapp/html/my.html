@@ -129,13 +129,13 @@
         for (let i = 0; i < totalPagesCount; i++) {
             let pageNumButton = "<button>" + (i + 1) + "</button>";
             let button = $(pageNumButton)
-                .attr("id", "pagingButton" + i)
-                .attr("onclick", "showPlayersList(" + i + ")")
-                .addClass("pageNumButtonStyle");
-            $("#buttonPages").append(button);
+                .attr('id', "pagingButton" + i)
+                .attr('onclick', "showPlayersList(" + i + ")")
+                .addClass('pageNumButtonStyle');
+            $('#buttonPages').append(button);
         }
         let buttonMarker = "#pagingButton" + pageNumber;
-        $(buttonMarker).css('color', "red");
+        $(buttonMarker).css('color', 'rgb(255,0,0)');
 
     }
 
@@ -183,7 +183,7 @@
         tdRace.innerHTML = getRaceElementDropdown(id);
         $(raceId).val(raceIdCurrentValue).change();
         let tdProfession = childElement[4];
-        let professionId = "#selectProfesssion" + id;
+        let professionId = "#selectProfession" + id;
         let professionIdCurrentValue = tdProfession.innerHTML;
         tdProfession.innerHTML = getProfessionElementDropdown(id);
         $(professionId).val(professionIdCurrentValue).change();
@@ -225,12 +225,12 @@
             success: function () {
                 $("#inputNewName").val("");
                 $("#inputNewTitle").val("");
-                $("#selectNewRace").val("");
-                $("#selectNewProfession").val("");
-                $("#selectNewLevel").val("");
-                $("#selectNewBirthday").val("");
-                $("#selectNewBanned").val("");
-                showPlayersList(getCurrentPage(""));
+                $("#inputNewRace").val("");
+                $("#inputNewProfession").val("");
+                $("#inputNewLevel").val("");
+                $("#inputNewBirthday").val("");
+                $("#inputNewBanned").val("");
+                showPlayersList(getCurrentPage());
             }
         });
     }
@@ -263,9 +263,9 @@
     }
 
     function getRaceElementDropdown(id) {
-        let raceId = "#selectRace" + id;
+        let raceId = "selectRace" + id;
         return "<label for='race'></label>"
-            + "<select id=" + raceId + "name='race'>"
+            + "<select id=" + raceId + " name='race'>"
             + "<option value='HUMAN'>HUMAN</option>"
             + "<option value='DWARF'>DWARF</option>"
             + "<option value='ELF'>ELF</option>"
@@ -277,9 +277,9 @@
     }
 
     function getProfessionElementDropdown(id) {
-        let professionId = "#selectProfession" + id;
+        let professionId = "selectProfession" + id;
         return "<label for='profession'></label>"
-            + "<select id=" + professionId + "name='profession'>"
+            + "<select id=" + professionId + " name='profession'>"
             + "<option value='WARRIOR'>WARRIOR</option>"
             + "<option value='ROGUE'>ROGUE</option>"
             + "<option value='SORCERER'>SORCERER</option>"
@@ -292,9 +292,9 @@
     }
 
     function getBannedElementDropdown(id) {
-        let bannedId = "#selectBanned" + id;
+        let bannedId = "selectBanned" + id;
         return "<label for='banned'></label>"
-            + "<select id=" + bannedId + "name='banned'>"
+            + "<select id=" + bannedId + " name='banned'>"
             + "<option value='false'>false</option>"
             + "<option value='true'>true</option>"
             + "</select>";
